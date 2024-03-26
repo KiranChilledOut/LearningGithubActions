@@ -24,3 +24,19 @@ jobs:
       
                   [1]: https://github.com/peter-evans/create-or-update-comment
                 reactions: '+1'
+    
+    comment-with-api:
+        runs-on: windows-latest
+        steps:
+            - name: Create comment with API
+              run: |
+                  gh api -X POST \
+                      http://api.github.com/repo/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}comments \
+                      -f body = '
+                      Comment but from the API Call and not from action
+                      '
+              env:
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+                  ORGANIZATION: ${{github.event.ORGANIZATION.login}}
+                  REPOSITORY: ${{github.event.REPOSITORY.name}}
+                  ISSUE_NUMBER: ${{github.event.issue.number}}

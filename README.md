@@ -5,6 +5,7 @@
   - [Steps followed as below](#steps-followed-as-below)
     - [Fetching details of the Issue](#fetching-details-of-the-issue)
     - [Adding a Comment to the Issue created](#adding-a-comment-to-the-issue-created)
+    - [Commenting with an API](#commenting-with-an-api)
 
 # Learning Github Actions
 
@@ -81,7 +82,9 @@ This is a beginner course on Github actions. I am creating this as a newbee who 
 ## Comment on new issues
 
 - We will be using github community [action](https://github.com/marketplace/actions/create-or-update-comment)
-- `Context` in order for the github actions to comment on an issue it needs to know some information like issue id etc.This is called Context.
+- `Context` in order for the github actions to comment on an issue it needs to know some information like issue id etc. This is called Context
+- Before proceeding please check if you actions have the `write` permissions given to it
+  - Settings -> Actions -> General -> `Read and write permissions`
   
 ## Steps followed as below
 
@@ -116,6 +119,7 @@ This is a beginner course on Github actions. I am creating this as a newbee who 
 ### Adding a Comment to the Issue created
 
 - Add the below step in the file `issue_comment.yaml` created in the above step
+
   ```yaml
     - name: Create comment
       uses: peter-evans/create-or-update-comment@v4
@@ -129,5 +133,11 @@ This is a beginner course on Github actions. I am creating this as a newbee who 
           [1]: https://github.com/peter-evans/create-or-update-comment
         reactions: '+1'
   ```
+
   - Notice `${{github.event.issue.number}}` is just the json tree output we saw in previous step.
 - Commit changes and push the code.
+- Create a new issue and you will see the Github Actions commenting on it. This is so cool . Ain't it ? 😜 Next let us create the same commenting with an API
+
+### Commenting with an API
+
+- Add the below job the file `issue_comment.yaml` created in the above step
