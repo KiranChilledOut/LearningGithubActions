@@ -27,17 +27,33 @@ jobs:
             [1]: https://github.com/peter-evans/create-or-update-comment
           reactions: '+1'
 
-  comment-with-api:
+  comment-with-api-windows:
     runs-on: windows-latest
     steps:
       - name: Create comment with API
         shell: pwsh
         run: |
           $url = "https://api.github.com/repos/${env:ORGANIZATION}/${env:REPOSITORY}/issues/${env:ISSUE_NUMBER}/comments"
-          $body = 'Comment but from the API call not action'
+          $body = 'Comment Windows Runner API call'
           gh api -X POST $url -f body=$body
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORGANIZATION: ${{ github.event.repository.owner.login }}
+          REPOSITORY: ${{ github.event.repository.name }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+  
+  comment-with-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create comment with API
+        run: |
+          gh api -X POST \
+            https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+            -f body='
+            Comment Ubuntu Runner API call
+            '
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORGANIZATION: ${{ github.event.organization.login }}
           REPOSITORY: ${{ github.event.repository.name }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
