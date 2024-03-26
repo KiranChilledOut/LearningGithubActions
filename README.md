@@ -1,8 +1,8 @@
-- [learnGithubActions](#learngithubactions)
+- [Learning Github Actions](#learning-github-actions)
   - [Concepts](#concepts)
   - [Steps followed in order](#steps-followed-in-order)
 
-# learnGithubActions
+# Learning Github Actions
 
 This is a beginner course on Github actions. I am creating this as a newbee who is also learning. Following this Repository will help you learn GitHub Actions as I learn too.
 
@@ -71,3 +71,7 @@ This is a beginner course on Github actions. I am creating this as a newbee who 
   - `jobs` - Specifies the actions based on the trigger.Here the jobs are `hello` and `goodbye`
   - `runs-on` - Specifies the host/runner the job runs on.
   - `uses: actions/checkout@v4` - this is used to use a community or a self created action. Click to know more about [actions/checkout](https://github.com/actions/checkout)
+- Commit and push you code and go to the GitHub Repository in Browser
+- You will see in Actions tab of your repository the workflow you created
+
+Congratulations 
