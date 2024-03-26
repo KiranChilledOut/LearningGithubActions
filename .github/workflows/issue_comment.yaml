@@ -37,3 +37,4 @@ jobs:
           REPOSITORY: ${{ github.event.repository.name }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           # https://gist.github.com/Link-/f817f7523a3ac5de6861efd7be6bc3fb
+    permissions: write-all
