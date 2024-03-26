@@ -10,7 +10,7 @@ on:
 
 jobs:
     hello:
-        runs-on: LNL-PW00N65F
+        runs-on: windows-latest
         steps:
             - uses: actions/checkout@v2
             - name: hello world
@@ -18,7 +18,7 @@ jobs:
               shell: powershell
     
     goodbye:
-        runs-on: LNL-PW00N65F
+        runs-on: windows-latest
         steps:
             - name: goodbye world
               run: write-host "goodbye World"
