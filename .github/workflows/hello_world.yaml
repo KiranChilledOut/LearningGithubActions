@@ -1,0 +1,25 @@
+name: Hello World workflow
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    hello:
+        runs-on: windows-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: hello world
+              run: write-host "hello World"
+              shell: powershell
+    
+    goodbye:
+        runs-on: windows-latest
+        steps:
+            - name: goodbye world
+              run: write-host "goodbye World"
+              shell: powershell
