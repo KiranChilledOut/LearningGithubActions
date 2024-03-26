@@ -1,6 +1,8 @@
 - [Learning Github Actions](#learning-github-actions)
   - [Concepts](#concepts)
-  - [Steps followed in order](#steps-followed-in-order)
+  - [Steps followed in order to create a simple WorkFlow](#steps-followed-in-order-to-create-a-simple-workflow)
+  - [Comment on new issues](#comment-on-new-issues)
+    - [Steps followed as below](#steps-followed-as-below)
 
 # Learning Github Actions
 
@@ -21,7 +23,7 @@ This is a beginner course on Github actions. I am creating this as a newbee who 
   - Self Hosted Runners
     - Built and customized by you
 
-## Steps followed in order
+## Steps followed in order to create a simple WorkFlow
 
 - Install the [GH CLI](https://github.com/cli/cli)
 - Create a repo `gh repo create KiranChilledOut/LearningGithubActions --public`
@@ -74,4 +76,30 @@ This is a beginner course on Github actions. I am creating this as a newbee who 
 - Commit and push you code and go to the GitHub Repository in Browser
 - You will see in Actions tab of your repository the workflow you created
 
-Congratulations 
+
+## Comment on new issues
+
+- We will be using github actions community
+- `Context` in order for the github actions to comment on an issue it needs to know some information like issue id etc.This is called Context.
+  
+### Steps followed as below
+
+- Create a new file `issue_comment.yaml`
+- Add the below code
+    ```yaml
+  name: Create a comment on new issues
+  on:
+      issues:
+          types: [opened]
+
+  jobs:
+      comment-with-action:
+          runs-on: windows-latest
+          steps:
+              - name: "dump github context"
+                run: |
+                  $json = '${{toJson(github.event)}}'
+                  Write-Output $json
+                shell: pwsh 
+
+    ```

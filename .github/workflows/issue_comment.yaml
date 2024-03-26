@@ -1,0 +1,14 @@
+name: Create a comment on new issues
+on:
+    issues:
+        types: [opened]
+
+jobs:
+    comment-with-action:
+        runs-on: windows-latest
+        steps:
+            - name: "dump github context"
+              run: |
+                $json = '${{toJson(github.event)}}'
+                Write-Output $json
+              shell: pwsh 
