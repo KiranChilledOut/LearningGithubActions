@@ -6,6 +6,8 @@
     - [Fetching details of the Issue](#fetching-details-of-the-issue)
     - [Adding a Comment to the Issue created](#adding-a-comment-to-the-issue-created)
     - [Commenting with an API](#commenting-with-an-api)
+  - [This completes the 1st part of the learning and you will have linked files for next steps](#this-completes-the-1st-part-of-the-learning-and-you-will-have-linked-files-for-next-steps)
+    - [Chapter 2 - CI with Actions](#chapter-2---ci-with-actions)
 
 # Learning Github Actions
 
@@ -140,4 +142,11 @@ This is a beginner course on Github actions. I am creating this as a newbee who 
 
 ### Commenting with an API
 
-- Add the below job the file `issue_comment.yaml` created in the above step
+- Added the job for ubuntu and windows runners to the file `issue_comment.yaml` created in the above step
+- Note the way you need to interact with Ubuntu and Windows Runner is different.
+- Now create and issue and watch the action.
+- [To get a list of API and actions](https://docs.github.com/en/rest?apiVersion=2022-11-28)
+
+## This completes the 1st part of the learning and you will have linked files for next steps
+
+### Chapter 2 - [CI with Actions](CIWithActions.md)
