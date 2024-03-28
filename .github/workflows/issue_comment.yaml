@@ -10,14 +10,11 @@ jobs:
   comment-with-action:
     runs-on: windows-latest
     steps:
-      - name: "Dump GitHub Context"
-        id: issueJsonObject
-        run: |
-          $json = '${{ toJson(github.event) }}'
-        shell: pwsh
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Create Comment
-        uses: peter-evans/create-or-update-comment@v4
+        uses: ./.github/workflows/actions/create-or-update-comment
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
