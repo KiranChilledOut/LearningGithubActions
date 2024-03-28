@@ -1,0 +1,26 @@
+name: Create Tool Cache for create-or-update-comment@v4
+on: push
+
+jobs:
+  create_tool_cache:
+    runs-on: windows-latest
+    steps:
+      - name: Clear any existing tool cache
+        run: |
+          rmdir /s /q "${{ runner.tool_cache }}\.tool_cache"
+          mkdir "${{ runner.tool_cache }}\.tool_cache"
+
+      - name: Download create-or-update-comment action
+        run: |
+          git clone https://github.com/peter-evans/create-or-update-comment.git "${{ runner.tool_cache }}\.tool_cache\create-or-update-comment"
+
+      - name: Archive tool cache
+        run: |
+          cd "${{ runner.tool_cache }}"
+          tar -czf tool_cache.tar.gz .tool_cache
+
+      - name: Upload tool cache artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: tool_cache
+          path: ${{ runner.tool_cache }}/tool_cache.tar.gz
