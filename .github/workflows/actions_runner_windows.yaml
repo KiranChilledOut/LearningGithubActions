@@ -21,10 +21,10 @@ jobs:
       - name: Archive tool cache
         shell: powershell
         run: |
-          Compress-Archive -Path "${{ runner.tool_cache }}\.tool_cache" -DestinationPath "${{ runner.tool_cache }}/tool_cache.tar.gz"
+          Compress-Archive -Path "${{ runner.tool_cache }}\.tool_cache" -DestinationPath "${{ runner.tool_cache }}/tool_cache.zip"
 
       - name: Upload tool cache artifact
         uses: actions/upload-artifact@v3
         with:
           name: tool_cache
-          path: ${{ runner.tool_cache }}/tool_cache.tar.gz
+          path: ${{ runner.tool_cache }}/tool_cache.zip
