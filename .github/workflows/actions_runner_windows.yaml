@@ -8,7 +8,9 @@ jobs:
       - name: Clear any existing tool cache
         shell: powershell
         run: |
-          Remove-Item -Path "${{ runner.tool_cache }}\.tool_cache" -Recurse -Force
+          if(Test-path "${{ runner.tool_cache }}\.tool_cache"){
+            Remove-Item -Path "${{ runner.tool_cache }}\.tool_cache" -Recurse -Force
+          }
           New-Item -ItemType Directory -Path "${{ runner.tool_cache }}\.tool_cache"
 
       - name: Download create-or-update-comment action
