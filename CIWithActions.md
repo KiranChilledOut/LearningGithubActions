@@ -55,3 +55,7 @@
 
 - [Repository](https://github.com/KiranChilledOut/ci-testing)
 - Just clone/ make change and push
+- Adding branch protection
+  - Setting -> Branched -> Require status checks to pass before merging
+    - Only `Job names` will be recognized
+  - Try to include code scanning to scan all security issues
