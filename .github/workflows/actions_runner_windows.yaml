@@ -6,18 +6,20 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Clear any existing tool cache
+        shell: powershell
         run: |
-          rmdir /s /q "${{ runner.tool_cache }}\.tool_cache"
-          mkdir "${{ runner.tool_cache }}\.tool_cache"
+          Remove-Item -Path "${{ runner.tool_cache }}\.tool_cache" -Recurse -Force
+          New-Item -ItemType Directory -Path "${{ runner.tool_cache }}\.tool_cache"
 
       - name: Download create-or-update-comment action
+        shell: powershell
         run: |
           git clone https://github.com/peter-evans/create-or-update-comment.git "${{ runner.tool_cache }}\.tool_cache\create-or-update-comment"
 
       - name: Archive tool cache
+        shell: powershell
         run: |
-          cd "${{ runner.tool_cache }}"
-          tar -czf tool_cache.tar.gz .tool_cache
+          Compress-Archive -Path "${{ runner.tool_cache }}\.tool_cache" -DestinationPath "${{ runner.tool_cache }}/tool_cache.tar.gz"
 
       - name: Upload tool cache artifact
         uses: actions/upload-artifact@v3
