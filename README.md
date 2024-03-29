@@ -7,8 +7,9 @@
     - [Adding a Comment to the Issue created](#adding-a-comment-to-the-issue-created)
     - [Commenting with an API](#commenting-with-an-api)
   - [This completes the 1st part of the learning and you will have linked files for next steps](#this-completes-the-1st-part-of-the-learning-and-you-will-have-linked-files-for-next-steps)
-    - [Chapter 2 - Adding an Action to Self-hosted Runner for GitHub Enterprise with no access to community Github](#chapter-2---adding-an-action-to-self-hosted-runner-for-github-enterprise-with-no-access-to-community-github)
-    - [Chapter 3 - CI with Actions](#chapter-3---ci-with-actions)
+    - [Adding Self Hosted Gateway - Adding an Action to Self-hosted Runner for GitHub Enterprise with no access to community Github](#adding-self-hosted-gateway---adding-an-action-to-self-hosted-runner-for-github-enterprise-with-no-access-to-community-github)
+    - [CI with Actions - CI with Actions](#ci-with-actions---ci-with-actions)
+    - [IAC - IAC Aws Concepts](#iac---iac-aws-concepts)
 
 # Learning Github Actions
 
@@ -150,5 +151,6 @@ This is a beginner course on Github actions. I am creating this as a newbee who 
 
 ## This completes the 1st part of the learning and you will have linked files for next steps
 
-### Chapter 2 - [Adding an Action to Self-hosted Runner for GitHub Enterprise with no access to community Github](ActionsSelfHosted.md)
-### Chapter 3 - [CI with Actions](CIWithActions.md)
+### Adding Self Hosted Gateway - [Adding an Action to Self-hosted Runner for GitHub Enterprise with no access to community Github](ActionsSelfHosted.md)
+### CI with Actions - [CI with Actions](CIWithActions.md)
+### IAC - [IAC Aws Concepts](IACAWS.md)
