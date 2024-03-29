@@ -67,7 +67,19 @@
 - Here we could deploy to new Instance like EC2 in Production while existing keeps serving the users to avoid any downtime .Which is Blue Green Deployment
 - This is the essence of CD
 
+## Demo Prerequisites
+- Understanding of Packer
+  - Packer is used to create identical machine images for multiple platforms from a single source configuration. It allows you to pre-build ‘golden images’ with all the necessary configurations, software, and settings
+- Understanding of Terraform
+  - Terraform is an infrastructure as code (IaC) tool that allows you to build, change, and version infrastructure safely and efficiently. It manages the deployment of infrastructure using the images created by Packer
+- Basic nodeJs
+- Basic AWS
+  - Login to AWS via Browser
+  - From services goto `IAM`
+  - Click on the user or create a new User and go to the Security Credential Link
+  - Got to Access keys and click `Create Access Key`
+  - Take note of the Access Key ID and Secret Access Key displayed. It's important to copy the Secret Access Key immediately as it won't be shown again.
 
-
-
-  -g
+## Steps to follow to test CD
+- Clone the [repository](https://github.com/KiranChilledOut/cd-testing.git)
+- Under the infra folder there is a Readme.md, follow the step and install the required software
