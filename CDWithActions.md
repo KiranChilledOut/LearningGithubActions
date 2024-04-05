@@ -82,4 +82,11 @@
 
 ## Steps to follow to test CD
 - Clone the [repository](https://github.com/KiranChilledOut/cd-testing.git)
-- Under the infra folder there is a Readme.md, follow the step and install the required software
+- Configure secrets in `Settings->Secrets->Action->Repository Secret`
+  - REMOTE_USER
+  - SSH_PRIVATE_KEY
+  - TERRAFORM_API_TOKEN
+- Configure a CLI workflow on Terraform Cloud which you leant in IAC module.
+  - Add the AWS keys there as mentioned in last module
+- Under the `infra folder` of the repository `cd-testing` there is a Readme.md, follow the step and install the required software
+- Also there is Readme.md under the repo `cd-testing` itself.Check that out too.

@@ -332,6 +332,7 @@ Hashicorp also provides a way for this and more using hashicorp Cloud. In this e
 - From here click the link to go to variable page
   ![alt text](image-13.png)
 - Add three sensitive variables by clicking the below option
+- Add three sensitive variables by clicking the below option
   ![alt text](image-14.png)
   ![alt text](image-15.png)
 - That is it you can run - Plan ,Apply using Run tab and clicking `New run`, but before this make changes to you Terraform files in the repository.

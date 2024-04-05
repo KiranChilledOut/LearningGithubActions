@@ -10,6 +10,9 @@
     - [Adding Self Hosted Gateway - Adding an Action to Self-hosted Runner for GitHub Enterprise with no access to community Github](#adding-self-hosted-gateway---adding-an-action-to-self-hosted-runner-for-github-enterprise-with-no-access-to-community-github)
     - [CI with Actions - CI with Actions](#ci-with-actions---ci-with-actions)
     - [IAC - IAC Aws Concepts](#iac---iac-aws-concepts)
+    - [CD - Continous Deployment](#cd---continous-deployment)
+    - [SelfHosted Runners Tool Cache - link](#selfhosted-runners-tool-cache---link)
+    - [SelfHosted Runner - Enterprise Setup](#selfhosted-runner---enterprise-setup)
 
 # Learning Github Actions
 
@@ -154,3 +157,6 @@ This is a beginner course on Github actions. I am creating this as a newbee who 
 ### Adding Self Hosted Gateway - [Adding an Action to Self-hosted Runner for GitHub Enterprise with no access to community Github](ActionsSelfHosted.md)
 ### CI with Actions - [CI with Actions](CIWithActions.md)
 ### IAC - [IAC Aws Concepts](IACAWS.md)
+### CD - [Continous Deployment]()
+### SelfHosted Runners Tool Cache - [link]()
+### SelfHosted Runner - [Enterprise Setup](ActionsWithEnterpriseSelfHostedRunners.md)
